@@ -1,0 +1,87 @@
+/* WhaScale CRM - Estilos do Painel Lateral */
+#whascale-sidebar {
+    position: fixed; top: 0; right: 0; width: 320px; height: 100vh;
+    background: #111b21; color: #e9edef;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 13px;
+    z-index: 999999; display: flex; flex-direction: column;
+    border-left: 2px solid #10B981; overflow-y: auto;
+    transition: transform 0.3s ease; box-shadow: -4px 0 20px rgba(0,0,0,0.4);
+}
+#whascale-sidebar.ws-collapsed { transform: translateX(290px); }
+.ws-toggle-btn {
+    position: absolute; left: -60px; top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    background: #10B981; color: white; padding: 6px 12px;
+    border-radius: 8px 8px 0 0; cursor: pointer;
+    font-size: 11px; font-weight: bold; z-index: 1000000; white-space: nowrap;
+}
+.ws-header {
+    display: flex; align-items: center; gap: 8px;
+    padding: 12px 16px; background: #10B981; color: white;
+    font-weight: bold; font-size: 14px;
+}
+.ws-contact-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 16px; background: #1f2c34; border-bottom: 1px solid #2a3942;
+}
+.ws-avatar {
+    width: 40px; height: 40px; background: #2a3942; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 20px;
+}
+.ws-contact-header h3 { margin: 0; font-size: 14px; color: #e9edef; }
+.ws-muted { color: #8696a0; margin: 2px 0; }
+.ws-tags-container { padding: 8px 16px; display: flex; flex-wrap: wrap; gap: 4px; }
+.ws-tag {
+    background: #2a3942; color: #10B981; border: 1px solid #10B981;
+    border-radius: 12px; padding: 2px 8px; font-size: 11px;
+}
+.ws-funil-row {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 16px; border-bottom: 1px solid #2a3942;
+}
+.ws-funil-badge { padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: bold; text-transform: uppercase; }
+.ws-funil-novo { background: #374151; color: #9CA3AF; }
+.ws-funil-em_contato { background: #1d4ed8; color: white; }
+.ws-funil-proposta { background: #92400e; color: #FCD34D; }
+.ws-funil-negociacao { background: #5b21b6; color: white; }
+.ws-funil-fechado { background: #065f46; color: #6EE7B7; }
+.ws-funil-perdido { background: #7f1d1d; color: #FCA5A5; }
+.ws-tabs { display: flex; background: #1f2c34; border-bottom: 1px solid #2a3942; }
+.ws-tab {
+    flex: 1; padding: 8px 4px; background: transparent; border: none;
+    color: #8696a0; cursor: pointer; font-size: 11px; transition: all 0.2s;
+}
+.ws-tab.active { color: #10B981; border-bottom: 2px solid #10B981; }
+.ws-tab-content { display: none; padding: 12px 16px; }
+.ws-tab-content.active { display: block; }
+.ws-list { max-height: 200px; overflow-y: auto; margin-bottom: 8px; }
+.ws-obs-item, .ws-tarefa-item, .ws-hist-item {
+    background: #1f2c34; border: 1px solid #2a3942;
+    border-radius: 8px; padding: 8px; margin-bottom: 6px;
+}
+.ws-obs-item p, .ws-tarefa-item p, .ws-hist-item p { margin: 0 0 4px 0; }
+.ws-obs-item small, .ws-tarefa-item small, .ws-hist-item small { color: #8696a0; font-size: 10px; }
+.ws-hist-item.ws-hist-enviada { border-left: 3px solid #10B981; }
+.ws-hist-item.ws-hist-recebida { border-left: 3px solid #3B82F6; }
+.ws-hist-item.ws-hist-nota_interna { border-left: 3px solid #F59E0B; }
+.ws-tarefa-tipo { font-size: 10px; padding: 2px 6px; border-radius: 8px; background: #2a3942; color: #10B981; text-transform: uppercase; }
+.ws-template-item { background: #1f2c34; border: 1px solid #2a3942; border-radius: 8px; padding: 8px; margin-bottom: 6px; }
+.ws-template-item strong { color: #10B981; font-size: 12px; }
+.ws-template-item p { color: #8696a0; font-size: 11px; margin: 4px 0; }
+.ws-input, .ws-textarea, .ws-select {
+    width: 100%; background: #2a3942; border: 1px solid #3d5060;
+    border-radius: 6px; color: #e9edef; padding: 7px 10px;
+    margin-bottom: 6px; font-size: 12px; box-sizing: border-box;
+}
+.ws-textarea { height: 60px; resize: none; }
+.ws-btn { width: 100%; padding: 8px; border-radius: 6px; border: none; cursor: pointer; font-size: 12px; font-weight: bold; transition: opacity 0.2s; }
+.ws-btn:hover { opacity: 0.85; }
+.ws-btn-primary { background: #10B981; color: white; }
+.ws-btn-copy { background: #2a3942; color: #10B981; border: 1px solid #10B981; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 11px; }
+.ws-empty { color: #8696a0; font-size: 11px; text-align: center; padding: 12px 0; }
+.ws-spinner {
+    width: 30px; height: 30px; border: 3px solid #2a3942;
+    border-top: 3px solid #10B981; border-radius: 50%;
+    animation: ws-spin 0.8s linear infinite; margin: 0 auto 12px;
+}
+@keyframes ws-spin { to { transform: rotate(360deg); } }
