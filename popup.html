@@ -1,32 +1,31 @@
 <!DOCTYPE html>
-  <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8"/>
-    <style>
-      body { width: 280px; font-family: "Segoe UI", Arial, sans-serif; background: #111b21; color: #e9edef; margin: 0; padding: 16px; }
-    h2 { color: #10B981; font-size: 16px; margin: 0 0 4px 0; }
-    p { color: #8696a0; font-size: 11px; margin: 0 0 16px 0; }
-    label { display: block; font-size: 12px; margin-bottom: 4px; color: #8696a0; }
-    input { width: 100%; background: #2a3942; border: 1px solid #3d5060; color: #e9edef; padding: 7px 10px; border-radius: 6px; font-size: 12px; box-sizing: border-box; margin-bottom: 10px; }
-        button { width: 100%; background: #10B981; color: white; border: none; padding: 9px; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 13px; }
-    .status { font-size: 11px; color: #10B981; margin-top: 8px; text-align: center; display: none; }
-    .logo { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-    .logo-circle { width: 32px; height: 32px; background: #10B981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px; }
-    .app-id { background: #2a3942; border-radius: 6px; padding: 6px 10px; font-size: 10px; color: #8696a0; margin-bottom: 10px; word-break: break-all; }
-    .app-id span { color: #10B981; font-family: monospace; }
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <title>WhaScale CRM</title>
+  <style>
+    body { width: 300px; font-family: Arial, sans-serif; padding: 16px; background: #111b21; color: #e9edef; margin: 0; }
+    h2 { color: #10B981; margin: 0 0 12px; font-size: 16px; }
+    p { font-size: 12px; color: #8696a0; margin: 0 0 10px; }
+    input { width: 100%; box-sizing: border-box; padding: 8px; border-radius: 6px; border: 1px solid #2a3942; background: #1f2c34; color: #e9edef; font-size: 13px; margin-bottom: 8px; }
+    button { width: 100%; padding: 9px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: bold; margin-bottom: 6px; }
+    .btn-primary { background: #10B981; color: white; }
+    .btn-secondary { background: #2a3942; color: #e9edef; }
+    .status { font-size: 12px; padding: 6px 8px; border-radius: 4px; display: none; text-align: center; }
+    .status.success { background: #064e3b; color: #6ee7b7; }
+    .status.error { background: #7f1d1d; color: #fca5a5; }
+    hr { border-color: #2a3942; margin: 12px 0; }
   </style>
-    </head>
-    <body>
-      <div class="logo">
-        <div class="logo-circle">W</div>
-        <h2>WhaScale CRM</h2>
-      </div>
-      <p>Configure sua API Key para ativar o painel no WhatsApp Web.</p>
-      <div class="app-id">App ID: <span>6a1d06b604ca0af56bb0519e</span></div>
-      <label>API Key:</label>
-      <input type="text" id="api-key-input" placeholder="a3150b2001434f65b62ece6766e101bb"/>
-      <button id="btn-save">Salvar Configuracao</button>
-      <p id="status" class="status">API Key salva com sucesso!</p>
-      <script src="popup.js"></script>
-    </body>
-    </html>
+</head>
+<body>
+  <h2>WhaScale CRM</h2>
+  <p>Configure sua API Key para ativar o painel CRM no WhatsApp Web.</p>
+  <label style="font-size:12px;color:#8696a0;">API Key do WhaScale</label>
+  <input type="password" id="api-key-input" placeholder="Cole sua API Key aqui..."/>
+  <button class="btn-primary" id="btn-save-key">Salvar API Key</button>
+  <div id="status-msg" class="status"></div>
+  <hr/>
+  <button class="btn-secondary" id="btn-open-wa">Abrir WhatsApp Web</button>
+  <script src="popup.js"></script>
+</body>
+</html>
